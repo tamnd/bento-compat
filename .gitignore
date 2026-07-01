@@ -1,0 +1,6 @@
+/bento-compat
+/bin/
+*.out
+scorecard.json
+scorecard.md
+.DS_Store
