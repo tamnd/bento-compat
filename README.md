@@ -37,7 +37,7 @@ A runtime that is not installed is skipped, not failed, so the harness is useful
 
 ## Fixtures
 
-- `basics/` language features every runtime must agree on: arithmetic, arrays, objects, strings, optional chaining, regex.
+- `basics/` language features every runtime must agree on: arithmetic, arrays, objects, strings, optional chaining, regex, and the increment, decrement, and compound assignment operators.
 - `coercion/` the primitive coercions String, Number, and Boolean, plus the ambient numeric predicates and the parse functions.
 - `numbers/` numeric literal forms, the exact Number::toString across the exponential thresholds, signed zero, and subnormals, the bit-exact Math methods fround, clz32, and imul at their boundaries, and the Math and Number constants (pi and its siblings, the safe-integer bounds, the infinities, and NaN), and toString and valueOf called as methods on a number or a boolean.
 - `strings/` string methods and operators: full Unicode case mapping, code-unit comparison, concatenation, indexing, padding, and trimming, plus template literals with their ToString coercions, escapes, multi-line text, and nesting, String.fromCharCode with its ToUint16 wrapping and lone surrogates, and replace and replaceAll with string patterns and their substitution patterns, and the legacy substr with its start-and-length carving.
