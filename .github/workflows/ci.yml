@@ -56,20 +56,22 @@ jobs:
           check-latest: true
           cache: true
 
+      # Pin concrete versions so a compatibility result moves only when we
+      # deliberately bump a runtime, not whenever a floating tag rolls forward.
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "24.18.0"
 
       - name: Setup Deno
         uses: denoland/setup-deno@v2
         with:
-          deno-version: v2.x
+          deno-version: v2.7.7
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: latest
+          bun-version: "1.3.11"
 
       - name: Build bento
         # Clone bento at main and build it, rather than go install @main, so the
