@@ -38,6 +38,9 @@ A runtime that is not installed is skipped, not failed, so the harness is useful
 ## Fixtures
 
 - `basics/` language features every runtime must agree on: arithmetic, arrays, objects, strings, optional chaining, regex.
+- `coercion/` the primitive coercions String, Number, and Boolean, plus the ambient numeric predicates and the parse functions.
+- `numbers/` numeric literal forms and the exact Number::toString across the exponential thresholds, signed zero, and subnormals.
+- `strings/` string methods and operators: full Unicode case mapping, code-unit comparison, concatenation, indexing, padding, and trimming.
 - `async/` promise ordering, async/await, microtask versus timer sequencing.
 - `node-core/` the Node core modules bento implements: path, buffer, events.
 - `fs/` filesystem round trips through node:fs and node:os.
