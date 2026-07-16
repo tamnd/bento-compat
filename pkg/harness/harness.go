@@ -106,8 +106,9 @@ type FixtureResult struct {
 	RefFound bool
 }
 
-// DiscoverFixtures walks root for .mjs, .js, and .ts programs and groups them by
-// their parent directory name.
+// DiscoverFixtures walks root for .ts, .js, and .mjs programs and groups them by
+// their parent directory name. The fixtures are TypeScript; the JavaScript
+// extensions stay accepted so a plain drop-in file can be checked alongside them.
 func DiscoverFixtures(root string) ([]Fixture, error) {
 	var fixtures []Fixture
 	err := filepath.WalkDir(root, func(path string, d os.DirEntry, err error) error {
@@ -118,7 +119,7 @@ func DiscoverFixtures(root string) ([]Fixture, error) {
 			return nil
 		}
 		ext := filepath.Ext(path)
-		if ext != ".mjs" && ext != ".js" && ext != ".ts" {
+		if ext != ".ts" && ext != ".js" && ext != ".mjs" {
 			return nil
 		}
 		rel, _ := filepath.Rel(root, path)
